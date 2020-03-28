@@ -12,18 +12,34 @@ import './Persik.css';
 
 const osName = platform();
 
-const Persik = props => (
-	<Panel id={props.id}>
-		<PanelHeader
-			left={<PanelHeaderButton onClick={props.go} data-to="home">
-				{osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
-			</PanelHeaderButton>}
-		>
-			Persik
-		</PanelHeader>
-		<img className="Persik" src={persik} alt="Persik The Cat"/>
-	</Panel>
-);
+class Persik extends React.Component {
+//	constructor(props) {
+//		super(props);
+//        this.state = {
+//            colors:'var(--accent)'
+//        }
+//	}
+
+	render() {
+
+		let { id, go} = this.props
+//		console.log(news_vk)
+//		console.log(fetchedUser)
+		return (
+            <Panel id={id}>
+                <PanelHeader
+                    left={<PanelHeaderButton onClick={go} data-to="home">
+                        {osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
+                    </PanelHeaderButton>}
+                >
+                    Persik
+                </PanelHeader>
+                <img className="Persik" src={persik} alt="Persik The Cat"/>
+            </Panel>
+        );
+    }
+}
+
 
 Persik.propTypes = {
 	id: PropTypes.string.isRequired,
