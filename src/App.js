@@ -14,7 +14,7 @@ class App extends React.Component {
 		this.state = {
 			activePanel: 'home',
 			fetchedUser: null,
-			popout:'ScreenSpinner'
+			popout:<ScreenSpinner />
 		};
 	}
 	componentDidMount() {
