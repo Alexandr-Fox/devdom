@@ -18,7 +18,7 @@ class App extends React.Component {
 		};
 	}
 	componentDidMount() {
-		connect.subscribe((e) => {
+		bridge.subscribe((e) => {
 			switch (e.detail.type) {
 				case 'VKWebAppGetUserInfoResult':
 					this.setState({ fetchedUser: e.detail.data, popout:null });
@@ -28,18 +28,18 @@ class App extends React.Component {
                     console.log(this.state);
 			}
 		});
-		connect.send('VKWebAppGetUserInfo', {});
+		bridge.send('VKWebAppGetUserInfo', {});
 	}
 
 	go = (e) => {
-		setActivePanel(e.currentTarget.dataset.to);
+		setState({activePanel:e.currentTarget.dataset.to});
 	}
 
 	render() {
 		return (
-            <View activePanel={activePanel} popout={popout}>
-                <Home id='home' fetchedUser={fetchedUser} go={go} />
-                <Persik id='persik' go={go} />
+            <View activePanel={this.state.activePanel} popout={this.state.popout}>
+                <Home id='home' fetchedUser={this.state.fetchedUser} go={this.go} />
+                <Persik id='persik' go={this.go} />
             </View>
 	    );
 	}

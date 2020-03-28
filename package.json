@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "vk-miniapps-deploy",
-    "surge-deploy": "npm run build && surge ./build --domain https://utochka.surge.sh.surge.sh"
+    "surge-deploy": "npm run build && surge ./build --domain https://utochka.surge.sh"
   },
   "keywords": [],
   "author": "",
