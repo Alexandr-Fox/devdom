@@ -32,7 +32,7 @@ class App extends React.Component {
 	}
 
 	go = (e) => {
-		setState({activePanel:e.currentTarget.dataset.to});
+		this.setState({activePanel:e.currentTarget.dataset.to});
 	}
 
 	render() {
