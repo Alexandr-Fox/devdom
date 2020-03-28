@@ -31,9 +31,9 @@ class App extends React.Component {
 		connect.send('VKWebAppGetUserInfo', {});
 	}
 
-	const go = e => {
+	go = (e) => {
 		setActivePanel(e.currentTarget.dataset.to);
-	};
+	}
 
 	render() {
 		return (
